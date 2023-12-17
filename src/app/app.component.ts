@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Project';
+  navigateLink: string = "recipes"
+
+  navigateTo (event: string){
+    this.navigateLink = event
+    console.log('this.navigateLink', this.navigateLink)
+  }
 }
