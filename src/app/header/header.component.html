@@ -17,12 +17,19 @@
     >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a (click)="onNavigate('recipes')" class="nav-link" href="#"
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}"
+            class="nav-link"
             >Recipes</a
           >
         </li>
         <li class="nav-item">
-          <a (click)="onNavigate('list')" class="nav-link" href="#"
+          <a
+            [routerLink]="['/sl']"
+            routerLinkActive="active"
+            class="nav-link"
             >Shopping list</a
           >
         </li>
@@ -37,7 +44,7 @@
           Dropdown button
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a app class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>

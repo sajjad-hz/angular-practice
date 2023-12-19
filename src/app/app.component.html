@@ -1,9 +1,8 @@
-<app-header (navigateEvent)="navigateTo($event)" class="header"></app-header>
+<app-header class="header"></app-header>
 <div class="container app-container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="navigateLink === 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="navigateLink === 'list'"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
