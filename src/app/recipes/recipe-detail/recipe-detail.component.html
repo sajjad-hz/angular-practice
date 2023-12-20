@@ -25,7 +25,7 @@
       </button>
       <ul class="dropdown-menu">
         <li><a (click)="addToSL(recipe.ingredients)" class="dropdown-item">To Shopping List</a></li>
-        <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+        <li><a class="dropdown-item" [routerLink]="['/', recipe.name]">Edit Recipe</a></li>
         <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
       </ul>
     </div>

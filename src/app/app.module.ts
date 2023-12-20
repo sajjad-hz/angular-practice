@@ -15,10 +15,12 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'sl', component: ShoppingListComponent },
+  { path: ':name', component: RecipeEditComponent },
 ];
 
 @NgModule({
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
