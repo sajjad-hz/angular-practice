@@ -20,6 +20,7 @@ import { TestComponent } from './test/test.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UsersService } from './users/users.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -27,8 +28,10 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent, children:[
     { path: 'user/:id', component: UserComponent }
   ] },
-  { path: ':name', component: RecipeEditComponent },
+  { path: 'recipe/:name', component: RecipeEditComponent },
   { path: 'test/:id/edit', component: TestComponent },
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
@@ -46,6 +49,7 @@ const appRoutes: Routes = [
     TestComponent,
     UsersComponent,
     UserComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
