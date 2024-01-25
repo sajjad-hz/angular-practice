@@ -26,4 +26,8 @@ export class RecipesComponent implements OnInit {
   onReloadPage() {
     this.router.navigate([''], {relativeTo:this.route});
   }
+
+  onPassQueryParams (id:number) {
+    this.router.navigate(['/test', id, 'edit'], {queryParams: {allowEdit: 1}, fragment: 'loading'})
+  }
 }

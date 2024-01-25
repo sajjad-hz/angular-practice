@@ -16,11 +16,19 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { TestComponent } from './test/test.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
+import { UsersService } from './users/users.service';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'sl', component: ShoppingListComponent },
+  { path: 'users', component: UsersComponent, children:[
+    { path: 'user/:id', component: UserComponent }
+  ] },
   { path: ':name', component: RecipeEditComponent },
+  { path: 'test/:id/edit', component: TestComponent },
 ];
 
 @NgModule({
@@ -35,6 +43,9 @@ const appRoutes: Routes = [
     ShoppingEditComponent,
     DropdownDirective,
     RecipeEditComponent,
+    TestComponent,
+    UsersComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +53,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [RecipeService, ShoppingListService],
+  providers: [RecipeService, ShoppingListService, UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
