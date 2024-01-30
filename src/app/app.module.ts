@@ -1,7 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Router, RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,17 +21,7 @@ import { UserComponent } from './users/user/user.component';
 import { UsersService } from './users/users.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-const appRoutes: Routes = [
-  { path: '', component: RecipesComponent },
-  { path: 'sl', component: ShoppingListComponent },
-  { path: 'users', component: UsersComponent, children:[
-    { path: 'user/:id', component: UserComponent }
-  ] },
-  { path: 'recipe/:name', component: RecipeEditComponent },
-  { path: 'test/:id/edit', component: TestComponent },
-  {path: 'not-found', component: NotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
-];
+
 
 @NgModule({
   declarations: [
@@ -53,9 +42,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule
   ],
   providers: [RecipeService, ShoppingListService, UsersService],
   bootstrap: [AppComponent],
